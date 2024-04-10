@@ -10,33 +10,35 @@ const Projects = ({openModal,setOpenModal}) => {
   return (
     <Container id="projects">
       <Wrapper>
-        <Title>Projects</Title>
+        <Title>Projets</Title>
         <Desc>
-          I have worked on a wide range of projects. From web apps to android apps. Here are some of my projects.
+          Mes projets réalisés, des applications Web à la conception graphique. Voici quelques-uns de mes projets.<br/> ⚠️🔨👷 Page en cours de réalisations.
+          
+
         </Desc>
         <ToggleButtonGroup >
-          {toggle === 'all' ?
-            <ToggleButton active value="all" onClick={() => setToggle('all')}>All</ToggleButton>
+          {toggle === 'tous' ?
+            <ToggleButton active value="tous" onClick={() => setToggle('all')}>Tous</ToggleButton>
             :
-            <ToggleButton value="all" onClick={() => setToggle('all')}>All</ToggleButton>
+            <ToggleButton value="tous" onClick={() => setToggle('all')}>Tous</ToggleButton>
           }
           <Divider />
           {toggle === 'web app' ?
-            <ToggleButton active value="web app" onClick={() => setToggle('web app')}>WEB APP'S</ToggleButton>
+            <ToggleButton active value="application web" onClick={() => setToggle('application web')}>APPLICATION WEB</ToggleButton>
             :
-            <ToggleButton value="web app" onClick={() => setToggle('web app')}>WEB APP'S</ToggleButton>
+            <ToggleButton value="application web" onClick={() => setToggle('application web')}>APPLICATION WEB</ToggleButton>
           }
           <Divider />
-          {toggle === 'android app' ?
-            <ToggleButton active value="android app" onClick={() => setToggle('android app')}>ANDROID APP'S</ToggleButton>
+          {toggle === 'graphic design' ?
+            <ToggleButton active value="graphic design" onClick={() => setToggle('graphic design')}>GRAPHIC DESIGN</ToggleButton>
             :
-            <ToggleButton value="android app" onClick={() => setToggle('android app')}>ANDROID APP'S</ToggleButton>
+            <ToggleButton value="graphic design" onClick={() => setToggle('graphic design')}>GRAPHIC DESIGN</ToggleButton>
           }
           <Divider />
-          {toggle === 'machine learning' ?
-            <ToggleButton active value="machine learning" onClick={() => setToggle('machine learning')}>MACHINE LEARNING</ToggleButton>
+          {toggle === 'computer programming' ?
+            <ToggleButton active value="computer programming" onClick={() => setToggle('computer programming')}>COMPUTER PROGRAMMING</ToggleButton>
             :
-            <ToggleButton value="machine learning" onClick={() => setToggle('machine learning')}>MACHINE LEARNING</ToggleButton>
+            <ToggleButton value="computer programming" onClick={() => setToggle('computer programming')}>COMPUTER PROGRAMMING</ToggleButton>
           }
         </ToggleButtonGroup>
         <CardContainer>

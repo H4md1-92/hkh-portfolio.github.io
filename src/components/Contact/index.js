@@ -131,6 +131,7 @@ const ContactButton = styled.input`
   font-weight: 600;
 `;
 
+
 const Contact = () => {
   //hooks
   const [open, setOpen] = React.useState(false);
@@ -138,35 +139,37 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // emailjs.sendForm('service_tox7kqs', 'template_nv7k7mj', form.current, 'SybVGsYS52j2TfLbi')
-    //   .then((result) => {
-    //     setOpen(true);
-    //     form.current.reset();
-    //   }, (error) => {
-    //     console.log(error.text);
-    //   });
+    emailjs.send("service_z3q97ii","template_xehdys4", form.current, 'UQN1AAz7KT1gjyZdB', {
+      to: 'hamdi.khemida@gmail.com', // Remplacez par l'adresse mail du destinataire
+    })
+      .then((result) => {
+        console.log("Email envoyé avec succes:", result);
+        setOpen(true);
+        form.current.reset();
+      }, (error) => {
+        console.log("Erreur Email non envoyés:", error);
+      });
   };
-
   return (
     <Container>
       <Wrapper>
         <Title>Contact</Title>
         <Desc>
-          Feel free to reach out to me for any questions or opportunities!
+            N'hésitez pas à me contacter<br/>pour toute question ou opportunité ! 🚀🧑‍🚀
         </Desc>
         <ContactForm ref={form} onSubmit={handleSubmit}>
-          <ContactTitle>Email Me 🚀</ContactTitle>
-          <ContactInput placeholder="Your Email" name="from_email" />
-          <ContactInput placeholder="Your Name" name="from_name" />
-          <ContactInput placeholder="Subject" name="subject" />
+          <ContactTitle>Email Moi 🚀</ContactTitle>
+          <ContactInput placeholder="Votre Email" name="from_email" />
+          <ContactInput placeholder="Votre Nom" name="from_name" />
+          <ContactInput placeholder="Sujet" name="subject" />
           <ContactInputMessage placeholder="Message" rows="4" name="message" />
-          <ContactButton type="submit" value="Send" />
+          <ContactButton type="submit" value="Envoyer" />
         </ContactForm>
         <Snackbar
           open={open}
           autoHideDuration={6000}
           onClose={() => setOpen(false)}
-          message="Email sent successfully!"
+          message="Email envoyé avec succés!"
           severity="success"
         />
       </Wrapper>
